@@ -58,7 +58,7 @@ module Plutus
 
     private
       def default_date
-        todays_date = ActiveRecord::Base.default_timezone == :utc ? Time.now.utc : Time.now
+        todays_date = ActiveRecord.default_timezone == :utc ? Time.now.utc : Time.now
         self.date ||= todays_date
       end
 
